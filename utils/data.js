@@ -11,6 +11,21 @@ const usernames = [
   'Sarah',
   'Nathaniel',
   'Parker',
+  'Zoubaeir',
+  'Zubair',
+  'Zubayr',
+  'Zuriel',
+  'Xander',
+  'Jared',
+  'Courtney',
+  'Gillian',
+  'Clark',
+  'Jared',
+  'Grace',
+  'Kelsey',
+  'Tamar',
+  'Alex',
+  'Mark',
 ];
 
 const reactions = [
@@ -37,7 +52,7 @@ const thoughts = [
   'Monopoly Money Manager is more my style',
   'Movie trailers always give away too much about the movie!',
   'Hello world is a classic example of most developers first line of code!',
-  'Stupid Social Media appsteal too much information!',
+  'Stupid Social Media apps steal too much information!',
   'Taking notes is a great way to remember information',
   'I love sending messages to my mom!'
 ];
@@ -50,20 +65,17 @@ const getRandomName = () =>
   `${getRandomArrItem(usernames)}`;
 
 // Function to generate random Thoughts that we can add to user object.
-const getRandomThoughts = (int) => {
-  const results = [];
-  for (let i = 0; i < int; i++) {
-    results.push({
-      thoughtText: getRandomArrItem(thoughts),
-      username: getRandomArrItem(usernames),
-      reactions: {
-        reactionBody: randomItem(reactions),
-        username: randomItem(usernames),
-      }
-    });
-  }
-  return results;
+const getRandomThought = () => {
+	const result = {
+		thoughtText: getRandomArrItem(thoughts),
+		username: getRandomArrItem(usernames),
+		reactions: {
+			reactionBody: getRandomArrItem(reactions),
+			username: getRandomArrItem(usernames),
+		},
+	};
+	return result;
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomThoughts };
+module.exports = { getRandomName, getRandomThought };

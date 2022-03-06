@@ -14,8 +14,16 @@ const userSchema = new Schema(
 			match: /.+\@.+\..+/,
 			required: true
 		},
-		thoughts: [{ type: Schema.Types.ObjectId, ref: 'thought' }],
-		friends: [{ type: Schema.Types.ObjectId, ref: 'user' }]
+		thoughts: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'thought',
+			}],
+		friends: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'user',
+			}]
 	},
 	{
 		toJSON: {
